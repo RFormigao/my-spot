@@ -17,6 +17,12 @@
   margin: 0;
 }
 
+.title_secundary {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -27,8 +33,8 @@
 
 .container .container_login {
   display: flex;
-  width: 70%;
-  height: 65vh;
+  width: 850px;
+  height: 400px;
   background-color: #CEEBF2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -37,7 +43,7 @@
 .container .container_login .social_login {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 45%;
   padding: 40px;
   background-color: #4481A6;
 }
@@ -52,8 +58,54 @@
   margin-top: 10px;
 }
 
+.container .container_login .normal_login {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  padding: 50px;
+}
+
+.container .container_login .normal_login .create_login {
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.container .container_login .normal_login .form_login {
+  margin: 20px 0;
+}
+
+.container .container_login .normal_login .form_login .input_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .container_login .normal_login .form_login .input_form input {
+  background-color: #CEEBF2;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+  outline: none;
+}
+
+.container .container_login .normal_login .form_login .remember_form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.container .container_login .normal_login .form_login .remember_form a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.container .container_login .normal_login .form_login .send_form {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
 .button {
-  width: 150px;
+  width: 140px;
   height: 40px;
   border: none;
   cursor: pointer;
@@ -69,6 +121,10 @@
 .button.google {
   background-color: #EB5757;
   margin-left: 5px;
+}
+
+.button.login {
+  background-color: #4481A6;
 }
 
 html, body {

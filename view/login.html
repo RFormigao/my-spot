@@ -37,13 +37,21 @@
 				<span class="create_login">
 					Não possui uma conta? Crie sua conta, isso leva menos de um minuto.
 				</span>
-				<form action="#" method="post">
-					<input type="text" placeholder="Nome de usuário">
-					<input type="password" name="password" id="password">
-					<input type="checkbox" name="save" id="save">
-					<label for="save">Lembrar senha</label>
-					<span>Esqueceu sua senha?</span>
-					<input type="submit" value="Entrar">
+				<form action="#" method="post" class="form_login" id="form_login">
+					<div class="input_form">
+						<input type="text" placeholder="Nome de usuário">
+						<input type="password" name="password" id="password">
+					</div>
+					<div class="remember_form">
+						<div>
+							<input type="checkbox" name="save" id="save">
+							<label for="save">Lembrar senha</label>
+						</div>
+						<a href="#">Esqueceu sua senha?</a>
+					</div>
+					<div class="send_form">
+						<input class="button login" type="submit" value="Entrar">
+					</div>
 				</form>
 			</div>
 		</div>
