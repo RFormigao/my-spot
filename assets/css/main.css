@@ -40,6 +40,10 @@
   border-radius: 5px;
 }
 
+.container .container_login.container_register {
+  height: 450px;
+}
+
 .container .container_login .social_login {
   display: flex;
   flex-direction: column;
@@ -68,6 +72,11 @@
 .container .container_login .normal_login .create_login {
   margin-top: 20px;
   max-width: 500px;
+}
+
+.container .container_login .normal_login .create_login .link_register {
+  color: #4481A6;
+  text-decoration: none;
 }
 
 .container .container_login .normal_login .form_login {

@@ -12,7 +12,7 @@ gulp.task('browserSync', function() {
       baseDir: './',
     },
     port: 8080,
-    startPath: 'view/login.html',
+    startPath: 'view/register.html',
   })
 });
 

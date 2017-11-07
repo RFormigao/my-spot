@@ -15,6 +15,10 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		border-radius: 5px;
 
+		&.container_register {
+			height: 450px;
+		}
+
 		.social_login {
 			display: flex;
 			flex-direction: column;
@@ -45,6 +49,12 @@
 			.create_login {
 				margin-top: 20px;
 				max-width: 500px;
+
+				.link_register {
+					color: $color_dark;
+					text-decoration: none;
+				}
+
 			}
 
 			.form_login {
