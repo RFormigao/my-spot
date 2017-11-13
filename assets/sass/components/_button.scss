@@ -19,4 +19,39 @@
 	&.login {
 		background-color: $color-dark;
 	}
+
+	&.add {
+		background-color: $color_dark;
+		margin: 10px;
+		
+	}
+}
+
+.options {
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 3px;
+	
+	&.location {
+		background-color: orangered;
+	}
+
+	&.share {
+		background-color: $color_dark;
+	}
+
+	&.delete {
+		background-color: $color_google;
+	}
+
+	&.exit {
+		background-color: $color_google;
+	}
+
+	&.config {
+		background-color: $color_dark;
+	}
+	i {
+		color: $color_white;
+	}
 }

@@ -10,3 +10,20 @@
 	font-weight: bold;
 	margin: 0;
 }
+
+.title_map,
+.title_details {
+	color: $color_white;
+	font-weight: bold;
+	margin: 0 0 20px 0;
+}
+
+.title_profile {
+	font-size: $title_profile;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.title_spot {
+	margin:0;
+}
