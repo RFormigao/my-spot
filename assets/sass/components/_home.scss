@@ -128,6 +128,10 @@
           margin: 2.5px 0;
         }
 
+        .counter_spot {
+          color: $color_dark;
+        }
+
       }
     }
 
@@ -155,7 +159,7 @@
   }
 }
 
-.container_modal {
+.container_map, .container_profile {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -166,21 +170,74 @@
 
   z-index: 1;
 
-  .modal_map {
+  .modal {
     position: absolute;
     display: none;
     background-color: white;
     width: 50%;
     height: 70%;
 
-    .header_map {
+    &.update {
+      height: 95%;
+    }
+
+    .header_modal {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       color: $color_dark;
       padding: 10px;
+
+      i {
+        cursor: pointer;
+      }
+
     }
+
+    .content_modal {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      .box_image {
+        display: flex;
+        justify-content: center;
+        .image_profile {
+          width: 90px;
+          height: 90px;  
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .label_modal {
+        margin: 20px 0 0 0;
+        color: $color_dark;
+      }
+
+      .data_name {
+        width: 100%;
+        .name_first,.name_last {
+          width: 40%;
+        }
+      }
+
+      input {
+        border: none;
+        border-bottom: 1px solid $color_border;
+        padding: 10px 0;
+        margin: 5px 0;
+        outline: none;
+
+          &.user, &.password{
+            width: 81%;
+          }
+
+        }
+
+     
+    }
+    
 
     .input_spot {
       display: flex;
@@ -208,6 +265,12 @@
       padding: 10px;
       height: 150px;
       overflow: auto;
+
+      .img_icon {
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+      }
 
       &:hover {
         border-color:$color_dark;

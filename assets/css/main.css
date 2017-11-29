@@ -58,7 +58,7 @@
 }
 
 .container .container_login.container_register {
-  height: 450px;
+  height: 530px;
 }
 
 .container .container_login .social_login {
@@ -162,6 +162,7 @@
   padding: 5px 10px;
   margin: 5px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .options.location {
@@ -182,6 +183,10 @@
 
 .options.config {
   background-color: #4481A6;
+}
+
+.options.update {
+  background-color: #2E3840;
 }
 
 .options i {
@@ -315,6 +320,10 @@
   margin: 2.5px 0;
 }
 
+.container_home .details .manager_details .profile_details .counter_spot {
+  color: #4481A6;
+}
+
 .container_home footer {
   display: flex;
   justify-content: center;
@@ -334,7 +343,7 @@
   font-weight: 500;
 }
 
-.container_modal {
+.container_map, .container_profile {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -344,7 +353,7 @@
   z-index: 1;
 }
 
-.container_modal .modal_map {
+.container_map .modal, .container_profile .modal {
   position: absolute;
   display: none;
   background-color: white;
@@ -352,7 +361,11 @@
   height: 70%;
 }
 
-.container_modal .modal_map .header_map {
+.container_map .modal.update, .container_profile .modal.update {
+  height: 95%;
+}
+
+.container_map .modal .header_modal, .container_profile .modal .header_modal {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -360,14 +373,42 @@
   padding: 10px;
 }
 
-.container_modal .modal_map .input_spot {
-  display: flex;
-  flex-direction: column;
-  width: 97%;
-  padding: 10px;
+.container_map .modal .header_modal i, .container_profile .modal .header_modal i {
+  cursor: pointer;
 }
 
-.container_modal .modal_map .input_spot input {
+.container_map .modal .content_modal, .container_profile .modal .content_modal {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.container_map .modal .content_modal .box_image, .container_profile .modal .content_modal .box_image {
+  display: flex;
+  justify-content: center;
+}
+
+.container_map .modal .content_modal .box_image .image_profile, .container_profile .modal .content_modal .box_image .image_profile {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container_map .modal .content_modal .label_modal, .container_profile .modal .content_modal .label_modal {
+  margin: 20px 0 0 0;
+  color: #4481A6;
+}
+
+.container_map .modal .content_modal .data_name, .container_profile .modal .content_modal .data_name {
+  width: 100%;
+}
+
+.container_map .modal .content_modal .data_name .name_first, .container_map .modal .content_modal .data_name .name_last, .container_profile .modal .content_modal .data_name .name_first, .container_profile .modal .content_modal .data_name .name_last {
+  width: 40%;
+}
+
+.container_map .modal .content_modal input, .container_profile .modal .content_modal input {
   border: none;
   border-bottom: 1px solid #b4b1b1;
   padding: 10px 0;
@@ -375,12 +416,31 @@
   outline: none;
 }
 
-.container_modal .modal_map .select_icons {
+.container_map .modal .content_modal input.user, .container_map .modal .content_modal input.password, .container_profile .modal .content_modal input.user, .container_profile .modal .content_modal input.password {
+  width: 81%;
+}
+
+.container_map .modal .input_spot, .container_profile .modal .input_spot {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  padding: 10px;
+}
+
+.container_map .modal .input_spot input, .container_profile .modal .input_spot input {
+  border: none;
+  border-bottom: 1px solid #b4b1b1;
+  padding: 10px 0;
+  margin: 5px 0;
+  outline: none;
+}
+
+.container_map .modal .select_icons, .container_profile .modal .select_icons {
   color: #4481A6;
   padding: 10px;
 }
 
-.container_modal .modal_map .icons_map {
+.container_map .modal .icons_map, .container_profile .modal .icons_map {
   border: 1px solid #b4b1b1;
   border-radius: 3px;
   margin: 10px;
@@ -389,7 +449,13 @@
   overflow: auto;
 }
 
-.container_modal .modal_map .icons_map:hover {
+.container_map .modal .icons_map .img_icon, .container_profile .modal .icons_map .img_icon {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+}
+
+.container_map .modal .icons_map:hover, .container_profile .modal .icons_map:hover {
   border-color: #4481A6;
   cursor: pointer;
 }

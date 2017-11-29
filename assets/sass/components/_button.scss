@@ -31,9 +31,10 @@
 	padding: 5px 10px;
 	margin: 5px;
 	border-radius: 3px;
+	cursor: pointer;
 	
 	&.location {
-		background-color: orangered;
+		background-color: $color_location;
 	}
 
 	&.share {
@@ -51,6 +52,11 @@
 	&.config {
 		background-color: $color_dark;
 	}
+
+	&.update {
+		background-color: $color_primary;
+	}
+
 	i {
 		color: $color_white;
 	}
