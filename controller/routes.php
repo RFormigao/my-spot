@@ -1,4 +1,5 @@
 <?php
+	include_once "auto.php";
 	class routes
 	{
 		function start()
@@ -12,7 +13,11 @@
 		}
 
 		function home()
-		{
+		{	
+			$id = $_GET["id"];
+			$user = new user($id);
+			$userDAO2 = new userDAO();
+			$retorno = $userDAO2 -> search_address($user);
 			require_once "view/home.php";
 		}
 	}

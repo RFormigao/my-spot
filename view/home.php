@@ -31,7 +31,7 @@
 
         <div class="main">
             <div class="search">
-              <input class="input_search" type="text" placeholder="Digite o endereço desejado">
+              <input class="input_search" id="input_search" type="text" placeholder="Digite o endereço desejado">
             </div>
             <div id="map"></div>
         </div>
@@ -41,219 +41,36 @@
           <div class="manager_details">
               <section class="map_details">
                   <ul class="info_map">
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
           
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
+                    <?php 
+
+                      if(count($retorno) > 0)
+                      {
+                        for($x=0; $x < count($retorno); $x++)
+                        {
+                          echo "<li class='item_info'>";
+                          echo "<div>";
+                            echo "<i class='fa fa-home' aria-hidden='true'></i>";
+                            echo "<span>{$retorno[$x]->address} {$retorno[$x]->nickname}</span>";
+                          echo "</div>";
+                          echo"<div class='options_info'>";
+                            echo"<a id='update' class='options update' value='{$retorno[$x]->id_address}/{$retorno[$x]->address}/{$retorno[$x]->latitude}/{$retorno[$x]->longitude}/{$retorno[$x]->nickname}' href='#'><i class='fa fa-pencil' aria-hidden='true'></i></a>";
+                            echo"<a class='options location' value='{$retorno[$x]->latitude}/{$retorno[$x]->longitude}'href='#'><i class='fa fa-map-marker' aria-hidden='true'></i></a>";
+                           // echo"<a class='options share' href='#'><i class='fa fa-share-alt' aria-hidden='true'></i></a>";
+                            echo"<a class='options delete' value='{$retorno[$x]->id_address}' href='#' ><i class='fa fa-times' aria-hidden='true'></i></a>";
+                          echo"</div>";
+                          echo"</li>";
+                        }
+                      }
+                     
+                    ?>
                     
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
-          
-                    <li class="item_info">
-                      <div>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Rua Abolição, 780 (Minha casa)</span>
-                      </div>
-                      <div class="options_info">
-                        <a class="options update" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a class="options location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-                        <a class="options share" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <a class="options delete" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </div>
-                    </li>
                   </ul>    
               </section>
               <section class="profile_details">
                 <div class="option_profile">
-                  <a href="#" class="options exit"> <i class="fa fa-power-off" aria-hidden="true"></i> </a>
-                  <a href="#" class="options config" onclick="configModal('modal_profile', 'container_profile' , 'block', 2, 1, 0.2)"> <i class="fa fa-cog" aria-hidden="true"></i> </a>
+                  <a href="index.php?controller=c_user&method=logout" class="options exit"> <i class="fa fa-power-off" aria-hidden="true"></i> </a>
+                  <a href="#" class="options config" onclick="configModal('I','modal_profile', 'container_profile' , 'block', 2, 1, 0.2)"> <i class="fa fa-cog" aria-hidden="true"></i> </a>
                 </div>
                 <img class="image_profile" src="assets/images/profile/jaque_profile.jpg" alt="Foto perfil" srcset="">
                 <h2 class="title_profile"><?php echo $name. " " . $lastname ?></h2>
@@ -272,21 +89,31 @@
         <div class="modal" id="modal_map">
             <div class="header_modal">
               <h2 class="title_spot">Insira o seu Spot</h2>
-              <i class="fa fa-times close_modal" onclick="configModal('modal_map', 'container_map' , 'none', '1', '2', '1')" aria-hidden="true"></i>
+              <i class="fa fa-times close_modal" onclick="configModal('I','modal_map', 'container_map' , 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
             <div class="input_spot">
-              <input type="text" placeholder="Digite o apelido do seu Spot">
-              <input type="text" disabled placeholder="Rua Abolição, nº 780">
+              <input type="text" name="id" id="id" value="<?php echo $id ?>">
+              <input type="text" name="id_address" id="id_address">
+              <input type="text" name="lat" id="lat" value=''>
+              <input type="text" name="lon" id="lon" value=''>
+              <input type="text" name="nickname" id="nickname" placeholder="Digite o apelido do seu Spot">
+              <input type="text" name="address" id="address" disabled placeholder="Rua Abolição, nº 780">
             </div>
-            <label class="select_icons">Selecione o icone do seu Spot:</label>
-            <div class="icons_map">
-              <?php 
-                for ($i=1; $i <= 175 ; $i++) { 
-                echo "<img class='img_icon' src='assets/images/icons/icon (" . $i . ").svg' alt=''>";
-                }
-              ?>
+            <button class="button add btn-modal">Adicionar</button>
+        </div>
+      </div>
+      <div class="container_remove" id="container_remove">
+        <div class="modal" id="modal_remove">
+            <div class="header_modal">
+              <h2 class="title_spot">Remover Spot</h2>
+              <i class="fa fa-times close_modal" onclick="configModal('I','modal_remove', 'container_remove' , 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
-            <button class="button add">Adicionar</button>
+            <div class="input_spot">
+              <input type="text" name="id_raddress" id="id_raddress">
+              <p>Você tem certeza que deseja excluir o seu Spot?</p>
+            </div>
+            <button class="button add btn-modal" onclick="remove_address()">Sim</button>
+            <button class="button add btn-modal" onclick="configModal('I','modal_remove', 'container_remove' , 'none', '1', '2', '1')">Não</button>
         </div>
       </div>
 
@@ -294,7 +121,7 @@
         <form method="POST" class="modal update" id="modal_profile">
             <div class="header_modal">
               <h2 class="title_spot">Configure os seus dados</h2>
-              <i class="fa fa-times close_modal" onclick="configModal('modal_profile', 'container_profile', 'none', '1', '2', '1')" aria-hidden="true"></i>
+              <i class="fa fa-times close_modal" onclick="configModal('I','modal_profile', 'container_profile', 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
             <div class="content_modal">
               <div class="box_image">
@@ -303,7 +130,7 @@
               
               <label class="label_modal">Altere os seus dados principais:</label>
               <div class="data_name">
-                <input type="text" name="id" value="<?php echo $id?>" style="display:block">
+                <input type="hidden" name="id" value="<?php echo $id?>" style="display:block">
                 <input class="name_first" name="name" type="text" placeholder="<?php echo $name ?>">
                 <input class="name_last" name="lastname" type="text" placeholder="<?php echo $lastname ?>">
               </div>
@@ -323,6 +150,8 @@
 
     <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyA0gmpmV65_cORWJY7g2mSLeV5CtLuN9Bg"></script>
     <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <script>var address = <?php echo json_encode($retorno, JSON_UNESCAPED_UNICODE);?>;</script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/ajax_user.js"></script>
+    <script src="assets/js/ajax_address.js"></script>
     </html>

@@ -343,7 +343,7 @@
   font-weight: 500;
 }
 
-.container_map, .container_profile {
+.container_map, .container_profile, .container_remove {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -353,7 +353,7 @@
   z-index: 1;
 }
 
-.container_map .modal, .container_profile .modal {
+.container_map .modal, .container_profile .modal, .container_remove .modal {
   position: absolute;
   display: none;
   background-color: white;
@@ -361,11 +361,11 @@
   height: 70%;
 }
 
-.container_map .modal.update, .container_profile .modal.update {
+.container_map .modal.update, .container_profile .modal.update, .container_remove .modal.update {
   height: 95%;
 }
 
-.container_map .modal .header_modal, .container_profile .modal .header_modal {
+.container_map .modal .header_modal, .container_profile .modal .header_modal, .container_remove .modal .header_modal {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -373,42 +373,42 @@
   padding: 10px;
 }
 
-.container_map .modal .header_modal i, .container_profile .modal .header_modal i {
+.container_map .modal .header_modal i, .container_profile .modal .header_modal i, .container_remove .modal .header_modal i {
   cursor: pointer;
 }
 
-.container_map .modal .content_modal, .container_profile .modal .content_modal {
+.container_map .modal .content_modal, .container_profile .modal .content_modal, .container_remove .modal .content_modal {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.container_map .modal .content_modal .box_image, .container_profile .modal .content_modal .box_image {
+.container_map .modal .content_modal .box_image, .container_profile .modal .content_modal .box_image, .container_remove .modal .content_modal .box_image {
   display: flex;
   justify-content: center;
 }
 
-.container_map .modal .content_modal .box_image .image_profile, .container_profile .modal .content_modal .box_image .image_profile {
+.container_map .modal .content_modal .box_image .image_profile, .container_profile .modal .content_modal .box_image .image_profile, .container_remove .modal .content_modal .box_image .image_profile {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.container_map .modal .content_modal .label_modal, .container_profile .modal .content_modal .label_modal {
+.container_map .modal .content_modal .label_modal, .container_profile .modal .content_modal .label_modal, .container_remove .modal .content_modal .label_modal {
   margin: 20px 0 0 0;
   color: #4481A6;
 }
 
-.container_map .modal .content_modal .data_name, .container_profile .modal .content_modal .data_name {
+.container_map .modal .content_modal .data_name, .container_profile .modal .content_modal .data_name, .container_remove .modal .content_modal .data_name {
   width: 100%;
 }
 
-.container_map .modal .content_modal .data_name .name_first, .container_map .modal .content_modal .data_name .name_last, .container_profile .modal .content_modal .data_name .name_first, .container_profile .modal .content_modal .data_name .name_last {
+.container_map .modal .content_modal .data_name .name_first, .container_map .modal .content_modal .data_name .name_last, .container_profile .modal .content_modal .data_name .name_first, .container_profile .modal .content_modal .data_name .name_last, .container_remove .modal .content_modal .data_name .name_first, .container_remove .modal .content_modal .data_name .name_last {
   width: 40%;
 }
 
-.container_map .modal .content_modal input, .container_profile .modal .content_modal input {
+.container_map .modal .content_modal input, .container_profile .modal .content_modal input, .container_remove .modal .content_modal input {
   border: none;
   border-bottom: 1px solid #b4b1b1;
   padding: 10px 0;
@@ -416,18 +416,18 @@
   outline: none;
 }
 
-.container_map .modal .content_modal input.user, .container_map .modal .content_modal input.password, .container_profile .modal .content_modal input.user, .container_profile .modal .content_modal input.password {
+.container_map .modal .content_modal input.user, .container_map .modal .content_modal input.password, .container_profile .modal .content_modal input.user, .container_profile .modal .content_modal input.password, .container_remove .modal .content_modal input.user, .container_remove .modal .content_modal input.password {
   width: 81%;
 }
 
-.container_map .modal .input_spot, .container_profile .modal .input_spot {
+.container_map .modal .input_spot, .container_profile .modal .input_spot, .container_remove .modal .input_spot {
   display: flex;
   flex-direction: column;
   width: 97%;
   padding: 10px;
 }
 
-.container_map .modal .input_spot input, .container_profile .modal .input_spot input {
+.container_map .modal .input_spot input, .container_profile .modal .input_spot input, .container_remove .modal .input_spot input {
   border: none;
   border-bottom: 1px solid #b4b1b1;
   padding: 10px 0;
@@ -435,12 +435,12 @@
   outline: none;
 }
 
-.container_map .modal .select_icons, .container_profile .modal .select_icons {
+.container_map .modal .select_icons, .container_profile .modal .select_icons, .container_remove .modal .select_icons {
   color: #4481A6;
   padding: 10px;
 }
 
-.container_map .modal .icons_map, .container_profile .modal .icons_map {
+.container_map .modal .icons_map, .container_profile .modal .icons_map, .container_remove .modal .icons_map {
   border: 1px solid #b4b1b1;
   border-radius: 3px;
   margin: 10px;
@@ -449,13 +449,13 @@
   overflow: auto;
 }
 
-.container_map .modal .icons_map .img_icon, .container_profile .modal .icons_map .img_icon {
+.container_map .modal .icons_map .img_icon, .container_profile .modal .icons_map .img_icon, .container_remove .modal .icons_map .img_icon {
   width: 35px;
   height: 35px;
   padding: 5px;
 }
 
-.container_map .modal .icons_map:hover, .container_profile .modal .icons_map:hover {
+.container_map .modal .icons_map:hover, .container_profile .modal .icons_map:hover, .container_remove .modal .icons_map:hover {
   border-color: #4481A6;
   cursor: pointer;
 }

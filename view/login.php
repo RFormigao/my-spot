@@ -22,9 +22,13 @@
 					Entre com sua rede social
 				</span>
 				<div class="button_social">
-					<button class="button face" type="submit">
+				<?php
+					echo "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>";
+					echo "</fb:login-button>";		
+				?>
+					<!--<button class="button face" type="submit">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
-					</button>
+					</button>-->
 					<button class="button google" type="submit">
 						<i class="fa fa-google" aria-hidden="true"></i>
 					</button>
@@ -57,4 +61,7 @@
 		</div>
 	</div>
 </body>
+<script src="assets/js/jquery-2.1.1.min.js"></script>
+<script src="assets/js/ajax_user.js"></script>
+<script src="assets/js/fb.js"></script>
 </html>
