@@ -72,6 +72,9 @@
 						border-bottom: 1px solid black;
 						padding: 15px 0;
 						outline: none;
+						&:focus {
+							border-color: $color-dark;
+						}
 					}
 
 				}

@@ -72,7 +72,7 @@
                   <a href="index.php?controller=c_user&method=logout" class="options exit"> <i class="fa fa-power-off" aria-hidden="true"></i> </a>
                   <a href="#" class="options config" onclick="configModal('I','modal_profile', 'container_profile' , 'block', 2, 1, 0.2)"> <i class="fa fa-cog" aria-hidden="true"></i> </a>
                 </div>
-                <img class="image_profile" src="assets/images/profile/jaque_profile.jpg" alt="Foto perfil" srcset="">
+                <img class="image_profile" src="assets/images/profile/imagem1.png" alt="Foto perfil" srcset="">
                 <h2 class="title_profile"><?php echo $name. " " . $lastname ?></h2>
                 <p><?php echo $email ?></p>
                 <p class="counter_spot">Você possui 15 spots no mapa <i class="fa fa-heart-o" aria-hidden="true"></i></p>
@@ -89,13 +89,13 @@
         <div class="modal" id="modal_map">
             <div class="header_modal">
               <h2 class="title_spot">Insira o seu Spot</h2>
-              <i class="fa fa-times close_modal" onclick="configModal('I','modal_map', 'container_map' , 'none', '1', '2', '1')" aria-hidden="true"></i>
+              <i class="fa fa-times close_modal" onclick="configModal('L','modal_map', 'container_map' , 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
             <div class="input_spot">
-              <input type="text" name="id" id="id" value="<?php echo $id ?>">
-              <input type="text" name="id_address" id="id_address">
-              <input type="text" name="lat" id="lat" value=''>
-              <input type="text" name="lon" id="lon" value=''>
+              <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+              <input type="hidden" name="id_address" id="id_address">
+              <input type="hidden" name="lat" id="lat" value=''>
+              <input type="hidden" name="lon" id="lon" value=''>
               <input type="text" name="nickname" id="nickname" placeholder="Digite o apelido do seu Spot">
               <input type="text" name="address" id="address" disabled placeholder="Rua Abolição, nº 780">
             </div>
@@ -103,17 +103,17 @@
         </div>
       </div>
       <div class="container_remove" id="container_remove">
-        <div class="modal" id="modal_remove">
+        <div class="modal remove" id="modal_remove">
             <div class="header_modal">
               <h2 class="title_spot">Remover Spot</h2>
-              <i class="fa fa-times close_modal" onclick="configModal('I','modal_remove', 'container_remove' , 'none', '1', '2', '1')" aria-hidden="true"></i>
+              <i class="fa fa-times close_modal" onclick="configModal('L','modal_remove', 'container_remove' , 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
             <div class="input_spot">
-              <input type="text" name="id_raddress" id="id_raddress">
+              <input type="hidden" name="id_raddress" id="id_raddress">
               <p>Você tem certeza que deseja excluir o seu Spot?</p>
             </div>
             <button class="button add btn-modal" onclick="remove_address()">Sim</button>
-            <button class="button add btn-modal" onclick="configModal('I','modal_remove', 'container_remove' , 'none', '1', '2', '1')">Não</button>
+            <button class="button google btn-modal" onclick="configModal('I','modal_remove', 'container_remove' , 'none', '1', '2', '1')">Não</button>
         </div>
       </div>
 
@@ -121,11 +121,11 @@
         <form method="POST" class="modal update" id="modal_profile">
             <div class="header_modal">
               <h2 class="title_spot">Configure os seus dados</h2>
-              <i class="fa fa-times close_modal" onclick="configModal('I','modal_profile', 'container_profile', 'none', '1', '2', '1')" aria-hidden="true"></i>
+              <i class="fa fa-times close_modal" onclick="configModal('L','modal_profile', 'container_profile', 'none', '1', '2', '1')" aria-hidden="true"></i>
             </div>
             <div class="content_modal">
               <div class="box_image">
-                <img class="image_profile" src="assets/images/profile/jaque_profile.jpg" alt="Foto perfil" srcset="">
+                <img class="image_profile" src="assets/images/profile/imagem1.png" alt="Foto perfil" srcset="">
               </div>
               
               <label class="label_modal">Altere os seus dados principais:</label>
@@ -138,9 +138,9 @@
               <input type="text" name="email" placeholder="<?php echo $email ?>">
 
               <label class="label_modal">Altere a sua senha: (Deixe em branco para manter a senha atual)</label>
-              <input class="password" type="text" placeholder="Digite a sua senha atual">
-              <input class="password" name="password" type="text" placeholder="Digite sua nova senha">
-              <input class="password" type="text" placeholder="Confirme sua nova senha">
+              <input class="password" type="text" name="password_current" placeholder="Digite a sua senha atual">
+              <input class="password" name="password_new" type="text" placeholder="Digite sua nova senha">
+              <input class="password" type="text" name="password_new_confirm" placeholder="Confirme sua nova senha">
             </div>
             
             <input type="button" class="button add" value="Alterar" onclick="update_user()"/>

@@ -23,15 +23,17 @@
 				</span>
 				<div class="button_social">
 				<?php
-					echo "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>";
-					echo "</fb:login-button>";		
+					echo"<div class='fb-login-button' data-max-rows='1' data-size='large' 
+					data-button-type='login_with' data-show-faces='false' data-auto-logout-link='false' 
+					data-use-continue-as='false' onlogin='checkLoginState();'></div>";
+
+
+					//echo "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'>";
+					//echo "</fb:login-button>";	
 				?>
 					<!--<button class="button face" type="submit">
 						<i class="fa fa-facebook" aria-hidden="true"></i>
 					</button>-->
-					<button class="button google" type="submit">
-						<i class="fa fa-google" aria-hidden="true"></i>
-					</button>
 				</div>
 			</div>
 			<div class="normal_login">
@@ -43,8 +45,8 @@
 				</span>
 				<form action="#" method="post" class="form_login" id="form_login">
 					<div class="input_form">
-						<input type="text" name="usuario" placeholder="Nome de usuário">
-						<input type="password" placeholder="Senha" name="senha" id="password">
+						<input type="text" name="usuario" placeholder="Nome de usuário" required="required" >
+						<input type="password" placeholder="Senha" name="senha" id="password" required="required">
 					</div>
 					<div class="remember_form">
 						<div>

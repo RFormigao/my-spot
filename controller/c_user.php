@@ -6,10 +6,19 @@ class c_user
   function cadastrar() {
     $id="";
     if($_POST){
-        $user = new user(null ,$_POST["usuario"],$_POST["senha"],$_POST["email"],$_POST["nome"],$_POST["sobrenome"]);
+      $senha = $_POST["senha"];
+      $confirm_senha= $_POST["confirm_senha"];
+
+      if($senha == $confirm_senha) {
+        $user = new user(null ,$_POST["usuario"],$senha,$_POST["email"],$_POST["nome"],$_POST["sobrenome"]);
         $userDAO = new userDAO();
         $userDAO -> inserir($user);
         header("Location:index.php?controller=routes&method=start");
+      }
+      else {
+        echo"<script>alert('As senhas inseridas precisam ser iguais!');</script>";
+      }
+        
     }
     require_once "view/register.php";
   }
@@ -49,28 +58,47 @@ class c_user
     //so funciona se tiver echo na frfente    
    if ($_POST) {
 
+
     $id = $_POST['id'];
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
     $user = $_POST['user'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+
+    
+    $password_new = $_POST['password_new'];
+    $password_current = $_POST['password_current'];
+    $password_new_confirm = $_POST['password_new_confirm'];
 
     $user1 = new user ($id);
     $userDAO1 = new userDAO();
     $retorno = $userDAO1 -> search_user($user1);
-    
 
-    $_POST['id'] ? $id = $_POST['id'] : $id = $retorno[0]->id;
-    $_POST['name'] ? $name = $_POST['name'] : $name = $retorno[0]->name;
-    $_POST['lastname'] ? $lastname = $_POST['lastname'] : $lastname = $retorno[0]->last_name;    
-    $_POST['user'] ? $user = $_POST['user'] : $user = $retorno[0]->user;
-    $_POST['email'] ? $email = $_POST['email'] : $email = $retorno[0]->email;
-    $_POST['password'] ? $password = $_POST['password'] : $password = $retorno[0]->password;
+    if($password_current == $retorno[0]->password) 
+    {
+      $_POST['id'] ? $id = $_POST['id'] : $id = $retorno[0]->id;
+      $_POST['name'] ? $name = $_POST['name'] : $name = $retorno[0]->name;
+      $_POST['lastname'] ? $lastname = $_POST['lastname'] : $lastname = $retorno[0]->last_name;    
+      $_POST['user'] ? $user = $_POST['user'] : $user = $retorno[0]->user;
+      $_POST['email'] ? $email = $_POST['email'] : $email = $retorno[0]->email;
+      $_POST['password_new'] ? $password = $_POST['password_new'] : $password = $retorno[0]->password;
+      
+      if($password_new == $password_new_confirm){
+        $user = new user($id, $user, $password, $email, $name, $lastname);
+        $userDAO = new userDAO();
+        $userDAO -> update($user);
+      }
+      else {
+        echo "A nova senha não confere";
+      }
+
+      echo "Atualização feita com sucesso!";
     
-    $user = new user($id, $user, $password, $email, $name, $lastname);
-    $userDAO = new userDAO();
-    $userDAO -> update($user);    
+    }
+    else {
+      echo "A senha inserida nao confere com a atual";
+    }
+    
    } 
   }
 

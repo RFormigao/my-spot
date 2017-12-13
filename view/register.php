@@ -22,12 +22,12 @@
 					Entre com sua rede social
 				</span>
 				<div class="button_social">
-					<button class="button face" type="submit">
-						<i class="fa fa-facebook" aria-hidden="true"></i>
-					</button>
-					<button class="button google" type="submit">
-						<i class="fa fa-google" aria-hidden="true"></i>
-					</button>
+				<?php
+					echo"<div class='fb-login-button' data-max-rows='1' data-size='large' 
+					data-button-type='login_with' data-show-faces='false' data-auto-logout-link='false' 
+					data-use-continue-as='false' onlogin='checkLoginState();'></div>";	
+				?>
+
 				</div>
 			</div>
 			<div class="normal_login">
@@ -35,16 +35,16 @@
 					Cadastro
 				</h2>
 				<span class="create_login">
-          Preencha as informações abaixo. Ou conecte-se com sua rede social ao lado.
+          Preencha as informações abaixo. Ou conecte-se com sua rede social ao lado. <a class="link_register" href="index.php?controller=routes&method=start">Voltar ao login</a>
 				</span>
 				<form action="#" method="post" class="form_login" id="form_login">
 					<div class="input_form">
-						<input type="text" name="nome" placeholder="Nome">
-						<input type="text" name="sobrenome" placeholder="Sobrenome">
-            <input type="text" name="usuario"  placeholder="Nome de usuário">
-            <input type="text" name="email" placeholder="Email">
-            <input type="password" name="senha" placeholder="Senha" name="password" id="password">
-            <input type="password" name="confirm_senha" placeholder="Confirmar senha" name="password" id="password">
+						<input type="text" required="required" name="nome" placeholder="Nome">
+						<input type="text"required="required"  name="sobrenome" placeholder="Sobrenome">
+            <input type="text" required="required" name="usuario"  placeholder="Nome de usuário">
+            <input type="text" required="required" name="email" placeholder="Email">
+            <input type="password" required="required" name="senha" placeholder="Senha" name="password" id="password">
+            <input type="password" required="required" name="confirm_senha" placeholder="Confirmar senha" name="password" id="password">
 					</div>
 					<div class="send_form">
 						<input class="button login" type="submit" value="Cadastrar">
@@ -54,4 +54,7 @@
 		</div>
 	</div>
 </body>
+<script src="assets/js/jquery-2.1.1.min.js"></script>
+<script src="assets/js/ajax_user.js"></script>
+<script src="assets/js/fb.js"></script>
 </html>

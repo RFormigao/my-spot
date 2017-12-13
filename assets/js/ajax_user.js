@@ -5,16 +5,19 @@ function update_user(){
   var lastname = document.getElementsByName("lastname");
   var user = document.getElementsByName("user");    
   var email = document.getElementsByName("email");
-  var password = document.getElementsByName("password");  
+  var password_current = document.getElementsByName("password_current");  
+  var password_new = document.getElementsByName("password_new");  
+  var password_new_confirm = document.getElementsByName("password_new_confirm");  
   
   $.ajax({
     url: "index.php?controller=c_user&method=update",
     type: "POST",
-    data: "id="+id[0].value+"&name="+name[0].value+"&lastname="+lastname[0].value+"&user="+user[0].value+"&email="+email[0].value+"&password="+password[0].value,
+    data: "id="+id[0].value+"&name="+name[0].value+"&lastname="+lastname[0].value+"&user="+user[0].value+"&email="+email[0].value+"&password_new="+password_new[0].value+"&password_current="+password_current[0].value+"&password_new_confirm="+password_new_confirm[0].value,
     dataType: "html"
 
   }).done(function(resposta) {
-    console.log('hhukhku');
+
+    alert(resposta);
 
   }).fail(function(jqXHR, textStatus ) {
       console.log("Request failed: " + textStatus);

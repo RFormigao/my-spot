@@ -23,6 +23,18 @@ function configModal(type,m, c, d, z1, z2, o) {
     $('.title_spot')[0].innerText = "Atualize seu Spot";
     $(".btn-modal")[0].innerText="Atualizar";    
   }
+
+  else if(type =="L") {
+    document.getElementsByName("nickname")[0].value ='';    
+    document.getElementsByName("name")[0].value ='';
+    document.getElementsByName("lastname")[0].value='';
+    document.getElementsByName("user")[0].value='';
+    document.getElementsByName("email")[0].value='';
+    document.getElementsByName("password_current")[0].value='';
+    document.getElementsByName("password_new")[0].value='';
+    document.getElementsByName("password_new_confirm")[0].value='';
+    
+  }
 }
 
 
